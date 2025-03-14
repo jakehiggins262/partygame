@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyun7p2t2pvdv"
-path="res://.godot/imported/Sample.png-1fd4b9a5ba9248bbfe2041494788b17f.ctex"
+uid="uid://bto6gmuckieu4"
+path="res://.godot/imported/stonefloor.png-d81018bd2da55ac025251a3899d8f077.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Kenny-roguelike-caves-dungeons/Sample.png"
-dest_files=["res://.godot/imported/Sample.png-1fd4b9a5ba9248bbfe2041494788b17f.ctex"]
+source_file="res://Art/Jake/stonefloor.png"
+dest_files=["res://.godot/imported/stonefloor.png-d81018bd2da55ac025251a3899d8f077.ctex"]
 
 [params]
 

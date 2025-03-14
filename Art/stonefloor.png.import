@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyuljxcj5wiv0"
-path="res://.godot/imported/roguelikeDungeon_magenta.png-75314cb7939b159319818afaa8c62981.ctex"
+uid="uid://dc82ru2v2g1f2"
+path="res://.godot/imported/stonefloor.png-918937b6f2ab64eb9990f625a1954a14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Kenny-roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_magenta.png"
-dest_files=["res://.godot/imported/roguelikeDungeon_magenta.png-75314cb7939b159319818afaa8c62981.ctex"]
+source_file="res://Art/stonefloor.png"
+dest_files=["res://.godot/imported/stonefloor.png-918937b6f2ab64eb9990f625a1954a14.ctex"]
 
 [params]
 
