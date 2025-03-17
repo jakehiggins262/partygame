@@ -1,2 +1,0 @@
-# GODOT Party game
- 
