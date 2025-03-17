@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cade+Jake Game"
-run/main_scene="uid://ds82vk666sav5"
+run/main_scene="uid://bamec4on8qldh"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
