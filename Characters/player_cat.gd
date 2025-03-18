@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var move_speed: float = 100  # @export allows us to edit this value in the inspector on the right
 @export var starting_direction: Vector2 = Vector2(0, 1)
+@export var player_id := 0
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
@@ -15,8 +16,8 @@ func _ready():
 func _physics_process(_delta):
 	# Get Input Directions
 	var input_direction = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
+		Input.get_action_strength("right" + str(player_id)) - Input.get_action_strength("left" + str(player_id)),
+		Input.get_action_strength("down" + str(player_id)) - Input.get_action_strength("up" + str(player_id))
 	)
 	
 	# Update the last direction if there's input
