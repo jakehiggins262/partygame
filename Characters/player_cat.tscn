@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://cf4uptxlt0jp5"]
+[gd_scene load_steps=26 format=3 uid="uid://clyt0ue3wlrpx"]
 
 [ext_resource type="Texture2D" uid="uid://cm3a041ypuk82" path="res://Art/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_k8dsg"]
-[ext_resource type="Script" uid="uid://sqacfd161d1g" path="res://Characters/player_cat.gd" id="1_u0lhy"]
+[ext_resource type="Script" uid="uid://sqacfd161d1g" path="res://Scripts/player_cat.gd" id="1_u0lhy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8dsg"]
 size = Vector2(10, 6)
@@ -170,52 +170,52 @@ _data = {
 &"walk_up": SubResource("Animation_twab1")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u0lhy"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_efodo"]
 animation = &"idle_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hhb2n"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ysuob"]
 animation = &"idle_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gx6m4"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n051w"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_twab1"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mn0u3"]
 animation = &"idle_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_u0lhy"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_u0lhy")
+blend_point_0/node = SubResource("AnimationNodeAnimation_efodo")
 blend_point_0/pos = Vector2(-0.00319999, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_hhb2n")
+blend_point_1/node = SubResource("AnimationNodeAnimation_ysuob")
 blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_gx6m4")
+blend_point_2/node = SubResource("AnimationNodeAnimation_n051w")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_twab1")
+blend_point_3/node = SubResource("AnimationNodeAnimation_mn0u3")
 blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 snap = Vector2(0.1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k8wwv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yqtxf"]
 animation = &"walk_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_10mfh"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_as3y0"]
 animation = &"walk_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t8sd1"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_03him"]
 animation = &"walk_right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nf2gw"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jhl3c"]
 animation = &"walk_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hhb2n"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_k8wwv")
+blend_point_0/node = SubResource("AnimationNodeAnimation_yqtxf")
 blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_10mfh")
+blend_point_1/node = SubResource("AnimationNodeAnimation_as3y0")
 blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_t8sd1")
+blend_point_2/node = SubResource("AnimationNodeAnimation_03him")
 blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_nf2gw")
+blend_point_3/node = SubResource("AnimationNodeAnimation_jhl3c")
 blend_point_3/pos = Vector2(-1, 0.00493276)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)

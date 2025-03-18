@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl1o8ih0oreud"]
+
+[ext_resource type="Script" uid="uid://dgimiv87nrlue" path="res://Scripts/ShooterPlayer.gd" id="1_c4sst"]
+[ext_resource type="Texture2D" uid="uid://kkw3sk7eod4s" path="res://Art/Jake/tempplayer.png" id="2_c4sst"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wo3lt"]
+radius = 8.0
+
+[node name="ShooterPlayer" type="CharacterBody2D"]
+position = Vector2(309, 252)
+script = ExtResource("1_c4sst")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 2)
+scale = Vector2(0.932292, 0.884115)
+texture = ExtResource("2_c4sst")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_wo3lt")
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(9, 2)

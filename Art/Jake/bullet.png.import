@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc82ru2v2g1f2"
-path="res://.godot/imported/stonefloor.png-918937b6f2ab64eb9990f625a1954a14.ctex"
+uid="uid://bbxo1pd37ptaj"
+path="res://.godot/imported/bullet.png-3eca81b64d426071796f9bda28173588.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/stonefloor.png"
-dest_files=["res://.godot/imported/stonefloor.png-918937b6f2ab64eb9990f625a1954a14.ctex"]
+source_file="res://Art/Jake/bullet.png"
+dest_files=["res://.godot/imported/bullet.png-3eca81b64d426071796f9bda28173588.ctex"]
 
 [params]
 
