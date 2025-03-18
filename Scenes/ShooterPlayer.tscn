@@ -19,5 +19,5 @@ texture = ExtResource("2_c4sst")
 position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_wo3lt")
 
-[node name="Node2D2" type="Node2D" parent="."]
-position = Vector2(9, 2)
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(17, 2)

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var move_speed: float = 100  # @export allows us to edit this value in the inspector on the right
 @export var starting_direction: Vector2 = Vector2(0, 1)
 @export var player_id := 0
+var bullet_path = preload("res://Scenes/bullet.tscn")
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
@@ -34,7 +35,9 @@ func _physics_process(_delta):
 		rotation = last_direction.angle()
 	else:
 		rotation = velocity.angle()
-	
+	if Input.is_action_just_pressed("ui_accept"):
+		fire()
+		
 	move_and_slide()
 	pick_new_state()
 
@@ -50,3 +53,11 @@ func pick_new_state():
 		state_machine.travel("Walk")
 	else:
 		state_machine.travel("Idle")
+
+func fire():
+	var bullet=bullet_path.instantiate()
+	bullet.dir=global_rotation
+	bullet.pos=$Node2D.global_position
+	bullet.rota=global_rotation
+	bullet.scale = Vector2(1, 1)
+	get_tree().current_scene.add_child(bullet)

@@ -260,3 +260,6 @@ advance_expression_base_node = NodePath("")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, -0.1)
 parameters/Walk/blend_position = Vector2(0, -0.1)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(9, 0)
