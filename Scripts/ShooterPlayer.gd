@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var move_speed: float = 100  # @export allows us to edit this value in the inspector on the right
 @export var starting_direction: Vector2 = Vector2(0, 1)
-@export var player_id := 1
+@export var player_id := 0
 var bullet_path = preload("res://Scenes/bullet.tscn")
 
 # Variable to store the last direction

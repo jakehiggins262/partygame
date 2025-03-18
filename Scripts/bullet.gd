@@ -15,3 +15,6 @@ func _physics_process(_delta):
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+func _on_area_2d_area_entered(body):
+	queue_free()
