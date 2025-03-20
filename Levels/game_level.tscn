@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://bamec4on8qldh"]
+[gd_scene load_steps=26 format=3 uid="uid://bamec4on8qldh"]
 
 [ext_resource type="PackedScene" uid="uid://clyt0ue3wlrpx" path="res://Characters/player_cat.tscn" id="1_3ty5n"]
 [ext_resource type="Texture2D" uid="uid://kkw3sk7eod4s" path="res://Art/Jake/tempplayer.png" id="2_bskef"]
 [ext_resource type="Texture2D" uid="uid://c5jf5xpt5a6jc" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_nxa8a"]
 [ext_resource type="Texture2D" uid="uid://02v07bqpq2yg" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="3_bskef"]
+[ext_resource type="Script" uid="uid://bjlfbm4nmvyj0" path="res://Scripts/MyHurtbox.gd" id="3_um5wi"]
+[ext_resource type="PackedScene" uid="uid://c7jn5l75sut12" path="res://Scenes/sword.tscn" id="4_alay0"]
 [ext_resource type="Texture2D" uid="uid://dmmdomd2lglne" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt.png" id="4_ds5vk"]
 [ext_resource type="Texture2D" uid="uid://dcditxcsgvduw" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="5_um5wi"]
 [ext_resource type="Texture2D" uid="uid://h8mpmm7sfglp" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Roof_Tilset.png" id="6_alay0"]
@@ -12,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://fyb7u3yjydf8" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="9_ah7re"]
 [ext_resource type="Script" uid="uid://dgorgt5b70isq" path="res://Cameras/camera_2d.gd" id="10_6tkkn"]
 [ext_resource type="Texture2D" uid="uid://cd5hvdwjts85a" path="res://Art/Jake/tempplayer2.png.png" id="12_bskef"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ooie"]
+radius = 9.0
+height = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nxa8a"]
 radius = 8.0
@@ -343,15 +349,27 @@ sources/7 = SubResource("TileSetAtlasSource_pl1jo")
 [node name="Game Level" type="Node2D"]
 
 [node name="Player1" parent="." instance=ExtResource("1_3ty5n")]
-position = Vector2(761, 463)
+position = Vector2(758, 466)
 move_speed = 250.0
 player_id = 1
 
 [node name="Sprite2D2" type="Sprite2D" parent="Player1"]
 texture = ExtResource("2_bskef")
 
+[node name="MyHurtbox" type="Area2D" parent="Player1/Sprite2D2"]
+script = ExtResource("3_um5wi")
+metadata/_custom_type_script = "uid://bjlfbm4nmvyj0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/Sprite2D2/MyHurtbox"]
+shape = SubResource("CapsuleShape2D_0ooie")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player1"]
 shape = SubResource("CircleShape2D_nxa8a")
+
+[node name="Node2D2" type="Node2D" parent="Player1"]
+
+[node name="Sword2D" parent="Player1/Node2D2" instance=ExtResource("4_alay0")]
+position = Vector2(15, 6)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sh88w")
@@ -371,12 +389,23 @@ position = Vector2(960, 544)
 script = ExtResource("10_6tkkn")
 
 [node name="Player2" parent="." instance=ExtResource("1_3ty5n")]
-position = Vector2(761, 463)
+position = Vector2(712, 462)
 move_speed = 250.0
 player_id = 2
 
 [node name="Sprite2D2" type="Sprite2D" parent="Player2"]
 texture = ExtResource("12_bskef")
 
+[node name="MyHurtbox" type="Area2D" parent="Player2/Sprite2D2"]
+script = ExtResource("3_um5wi")
+metadata/_custom_type_script = "uid://bjlfbm4nmvyj0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/Sprite2D2/MyHurtbox"]
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player2"]
 shape = SubResource("CircleShape2D_nxa8a")
+
+[node name="Node2D2" type="Node2D" parent="Player2"]
+
+[node name="Sword2D" parent="Player2/Node2D2" instance=ExtResource("4_alay0")]
+position = Vector2(16, 6)

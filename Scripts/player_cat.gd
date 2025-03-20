@@ -6,6 +6,8 @@ extends CharacterBody2D
 var bullet_path = preload("res://Scenes/bullet.tscn")
 
 @onready var animation_tree = $AnimationTree
+#animation player init
+@onready var animation_player := $AnimationPlayer
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 # Variable to store the last direction
@@ -61,3 +63,8 @@ func fire():
 	bullet.rota=global_rotation
 	bullet.scale = Vector2(1, 1)
 	get_tree().current_scene.add_child(bullet)
+	
+	
+func take_damage(amount: int) -> void:
+	animation_player.play("hit")
+	print("Damage: ", amount)
