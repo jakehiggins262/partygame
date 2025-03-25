@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://0tc5nkf0clr0"]
+[gd_scene load_steps=5 format=3 uid="uid://0tc5nkf0clr0"]
 
 [ext_resource type="Script" uid="uid://bh1o8s3d631hj" path="res://Scripts/bullet.gd" id="1_oduel"]
 [ext_resource type="Texture2D" uid="uid://bbxo1pd37ptaj" path="res://Art/Jake/bullet.png" id="2_ycag2"]
+[ext_resource type="Script" uid="uid://dgu0lslvkqpk1" path="res://Scripts/MyHitbox.gd" id="3_ycag2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6afsh"]
 size = Vector2(9.375, 3.375)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Bullet" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_oduel")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,7 +21,9 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6afsh")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Bullet"]]
+collision_layer = 2
+script = ExtResource("3_ycag2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_6afsh")

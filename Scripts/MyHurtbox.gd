@@ -20,4 +20,5 @@ func _on_area_entered(hitbox: MyHitbox) -> void:
 	#owner of a node, is the top node of a scene it is in
 	#owner property is used here because these hitboxes will be built as components of existing nodes 
 	if owner.has_method("take_damage"):
-		owner.take_damage(hitbox.damgage)
+
+		owner.take_damage(hitbox.damage)
