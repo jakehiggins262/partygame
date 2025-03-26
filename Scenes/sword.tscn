@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7jn5l75sut12"]
+[gd_scene load_steps=4 format=3 uid="uid://c7jn5l75sut12"]
 
-[ext_resource type="Script" uid="uid://bh1o8s3d631hj" path="res://Scripts/bullet.gd" id="1_6wdhb"]
 [ext_resource type="Texture2D" uid="uid://guju52mgelij" path="res://Art/Jake/sword.png" id="2_d6wag"]
 [ext_resource type="Script" uid="uid://dgu0lslvkqpk1" path="res://Scripts/MyHitbox.gd" id="3_d6wag"]
 
@@ -9,7 +8,6 @@ radius = 2.99896
 height = 11.9958
 
 [node name="Sword2D" type="CharacterBody2D"]
-script = ExtResource("1_6wdhb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_d6wag")

@@ -66,5 +66,13 @@ func fire():
 	
 	
 func take_damage(amount: int) -> void:
-	animation_player.play("hit")
+	#animation_player.play("hit")
 	print("Damage: ", amount)
+	queue_free() # Destroy the player
+	
+func _on_my_hurtbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("bullet"):
+		print("collided with bullet")
+		take_damage(1)
+	if area.is_in_group("player"):
+		print("collided with player")
