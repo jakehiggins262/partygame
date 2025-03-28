@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr6tbfme888tv"]
+
+[ext_resource type="Script" uid="uid://dx3t5hjc5nb0q" path="res://Scripts/gun_pickup.gd" id="1_5hgi8"]
+[ext_resource type="PackedScene" uid="uid://b6e7mgp50i87x" path="res://Scenes/Weapons/gun.tscn" id="2_87edr"]
+[ext_resource type="Texture2D" uid="uid://bdiydbmlao8x2" path="res://Art/Jake/gunpickup.png" id="2_rx8h2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_87edr"]
+
+[node name="GunPickup" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_5hgi8")
+gun_scene = ExtResource("2_87edr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_87edr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rx8h2")

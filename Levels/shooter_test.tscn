@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://br1d0p3lcftby"]
+[gd_scene load_steps=21 format=3 uid="uid://br1d0p3lcftby"]
 
 [ext_resource type="Texture2D" uid="uid://c5jf5xpt5a6jc" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="3_6nyvv"]
 [ext_resource type="Texture2D" uid="uid://02v07bqpq2yg" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="4_1sxg3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c3r6a4wldi5sw" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="9_q7wx6"]
 [ext_resource type="Texture2D" uid="uid://fyb7u3yjydf8" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="10_r42vy"]
 [ext_resource type="Script" uid="uid://dgorgt5b70isq" path="res://Cameras/camera_2d.gd" id="11_r1bxr"]
+[ext_resource type="PackedScene" uid="uid://cr6tbfme888tv" path="res://Scenes/Pickups/gun_pickup.tscn" id="11_s7t5f"]
 [ext_resource type="PackedScene" uid="uid://bk8x0m7bwsd4t" path="res://Scenes/player.tscn" id="11_y7dwh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jw0rm"]
@@ -355,8 +356,15 @@ position = Vector2(960, 544)
 script = ExtResource("11_r1bxr")
 
 [node name="Player" parent="." instance=ExtResource("11_y7dwh")]
-position = Vector2(360, 412)
+position = Vector2(219, 478)
 
 [node name="Player2" parent="." instance=ExtResource("11_y7dwh")]
-position = Vector2(463, 416)
+position = Vector2(318, 476)
 player_id = 1
+
+[node name="Player3" parent="." instance=ExtResource("11_y7dwh")]
+position = Vector2(609, 473)
+player_id = 1
+
+[node name="GunPickup" parent="." instance=ExtResource("11_s7t5f")]
+position = Vector2(403, 471)
