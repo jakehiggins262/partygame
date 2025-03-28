@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6e7mgp50i87x"]
+
+[ext_resource type="Texture2D" uid="uid://ccarw3ef03sad" path="res://Art/Jake/gun.png" id="1_7rnum"]
+[ext_resource type="Script" uid="uid://dyt86kc62rx7d" path="res://Scripts/gun.gd" id="1_c76ja"]
+
+[node name="gun" type="Node2D"]
+script = ExtResource("1_c76ja")
+metadata/_custom_type_script = "uid://783nuwddtjsn"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7rnum")
+
+[node name="BulletSpawn" type="Marker2D" parent="."]
+position = Vector2(8, -1)

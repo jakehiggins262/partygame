@@ -1,16 +1,22 @@
 extends CharacterBody2D
 
+# Public variables
 @export var move_speed: float = 100  # @export allows us to edit this value in the inspector on the right
 @export var starting_direction: Vector2 = Vector2(0, 1)
 @export var player_id := 0
-var bullet_path = preload("res://Scenes/bullet.tscn")
 
+# Private variables
+var current_weapon: Weapon
+var bullet_path = preload("res://Scenes/bullet.tscn")
+var last_direction: Vector2 = Vector2.ZERO
+var gun = preload("res://Scenes/Weapons/gun.tscn")
+
+func _ready():
+	var sword = preload("res://Scenes/Weapons/sword.tscn")
+	equip_weapon(sword)
 
 #animation player init
 #@onready var animation_player := $AnimationPlayer
-
-# Variable to store the last direction
-var last_direction: Vector2 = Vector2.ZERO
 
 func _physics_process(_delta):
 	# Get Input Directions
@@ -31,27 +37,33 @@ func _physics_process(_delta):
 		rotation = last_direction.angle()
 	else:
 		rotation = velocity.angle()
-	if Input.is_action_just_pressed("ui_accept"):
-		fire()
 		
 	move_and_slide()
-
-func fire():
-	var bullet=bullet_path.instantiate()
-	bullet.dir=global_rotation
-	bullet.pos=$Node2D.global_position
-	bullet.rota=global_rotation
-	bullet.scale = Vector2(1, 1)
-	get_tree().current_scene.add_child(bullet)
 	
-func take_damage(amount: int) -> void:
-	#animation_player.play("hit")
-	print("Damage: ", amount)
-	queue_free() # Destroy the player
+func _process(_delta):
+	# Player presses attack button
+	if Input.is_action_just_pressed("attack" + str(player_id)):
+		current_weapon.attack()
+	## Player presses place structure button
+	#if Input.is_action_just_pressed("place" + str(player_id)):
+		#place()
 
-func _on_my_hurtbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("bullet"):
-		print("collided with bullet")
-		take_damage(1)
-	if area.is_in_group("player"):
-		print("collided with player")
+func equip_weapon(weapon_scene: PackedScene):
+	# Remove current weapon if it exists
+	if current_weapon:
+		current_weapon.queue_free()
+
+	# Instantiate and attach the new weapon
+	var weapon_instance = weapon_scene.instantiate()
+	$WeaponHolder.add_child(weapon_instance)
+	current_weapon = weapon_instance
+
+#func _on_my_hurtbox_area_entered(area: Area2D) -> void:
+	#if area.is_in_group("bullet"):
+		#print("collided with bullet")
+		#queue_free()
+	#if area.is_in_group("player"):
+		#print("collided with player")
+
+func take_damage(amount: int) -> void:
+	queue_free() # Destroy the player
