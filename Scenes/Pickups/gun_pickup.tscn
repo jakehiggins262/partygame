@@ -7,6 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_87edr"]
 
 [node name="GunPickup" type="Node2D"]
+scale = Vector2(2.5, 2.5)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_5hgi8")

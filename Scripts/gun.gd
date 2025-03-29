@@ -17,7 +17,7 @@ func fire():
 	bullet.dir = global_rotation
 	bullet.pos = $BulletSpawn.global_position  # Bullet spawn position
 	bullet.rota = global_rotation  # Bullet's rotation (same as player's rotation)
-	bullet.scale = Vector2(1, 1)  # Adjust scale if needed
+	bullet.scale = Vector2(2, 2)  # Adjust scale if needed
 
 	# Add the bullet to the scene
 	get_tree().current_scene.add_child(bullet)
