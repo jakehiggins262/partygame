@@ -23,7 +23,6 @@ func _physics_process(_delta):
 	# Check if the bullet is outside the defined boundaries
 	if global_position.x < left_boundary or global_position.x > right_boundary or global_position.y < top_boundary or global_position.y > bottom_boundary:
 		queue_free()  # Free the bullet if it is outside the boundary
-		print("Bullet is out of bounds and disappears.")
 
 func _on_timer_timeout() -> void:
 	queue_free()
