@@ -10,9 +10,9 @@ var current_weapon: Weapon
 var bullet_path = preload("res://Scenes/bullet.tscn")
 var last_direction: Vector2 = Vector2.ZERO
 var gun = preload("res://Scenes/Weapons/gun.tscn")
+var sword = preload("res://Scenes/Weapons/sword.tscn")
 
 func _ready():
-	var sword = preload("res://Scenes/Weapons/sword.tscn")
 	equip_weapon(sword)
 
 #animation player init
@@ -88,5 +88,6 @@ func respawn():
 	
 	# Reset visibility, movement, and collision
 	show()
+	equip_weapon(sword)
 	set_physics_process(true)
 	$CollisionShape2D.set_deferred("disabled", false)
