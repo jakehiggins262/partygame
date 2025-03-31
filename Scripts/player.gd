@@ -66,4 +66,27 @@ func equip_weapon(weapon_scene: PackedScene):
 		#print("collided with player")
 
 func take_damage(amount: int) -> void:
-	queue_free() # Destroy the player
+	print("Player", player_id, "took damage and will respawn.")
+	
+	# Hide the player and disable movement
+	hide()
+	set_physics_process(false)
+	
+	# Disable collision to prevent interaction
+	$CollisionShape2D.set_deferred("disabled", true)
+	
+	# Wait for a respawn delay
+	await get_tree().create_timer(2.0).timeout
+	
+	respawn()
+
+func respawn():
+	var game_manager = get_tree().root.get_node("Game_Level/GameManager")
+	if game_manager and player_id in game_manager.respawn_points:
+		global_position = game_manager.respawn_points[player_id]
+		print("Player", player_id, "respawned at:", global_position)
+	
+	# Reset visibility, movement, and collision
+	show()
+	set_physics_process(true)
+	$CollisionShape2D.set_deferred("disabled", false)

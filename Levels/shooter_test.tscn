@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://br1d0p3lcftby"]
+[gd_scene load_steps=23 format=3 uid="uid://br1d0p3lcftby"]
 
 [ext_resource type="Texture2D" uid="uid://c5jf5xpt5a6jc" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="3_6nyvv"]
 [ext_resource type="Texture2D" uid="uid://02v07bqpq2yg" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="4_1sxg3"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://dgorgt5b70isq" path="res://Cameras/camera_2d.gd" id="11_r1bxr"]
 [ext_resource type="PackedScene" uid="uid://cr6tbfme888tv" path="res://Scenes/Pickups/gun_pickup.tscn" id="11_s7t5f"]
 [ext_resource type="PackedScene" uid="uid://bk8x0m7bwsd4t" path="res://Scenes/player.tscn" id="11_y7dwh"]
+[ext_resource type="PackedScene" uid="uid://dfjvulruu4aw6" path="res://Scenes/respawn_point.tscn" id="12_s7t5f"]
+[ext_resource type="PackedScene" uid="uid://dgus7k46xonnt" path="res://Scenes/game_manager.tscn" id="13_d8c3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jw0rm"]
 texture = ExtResource("3_6nyvv")
@@ -336,7 +338,7 @@ sources/5 = SubResource("TileSetAtlasSource_sf1a6")
 sources/6 = SubResource("TileSetAtlasSource_fct0e")
 sources/7 = SubResource("TileSetAtlasSource_pl1jo")
 
-[node name="Game Level" type="Node2D"]
+[node name="Game_Level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sh88w")
@@ -363,7 +365,18 @@ player_id = 1
 
 [node name="Player3" parent="." instance=ExtResource("11_y7dwh")]
 position = Vector2(449, 173)
-player_id = 1
+player_id = 3
 
 [node name="GunPickup" parent="." instance=ExtResource("11_s7t5f")]
 position = Vector2(249, 167)
+
+[node name="GameManager" parent="." instance=ExtResource("13_d8c3j")]
+
+[node name="RespawnPoint1" parent="GameManager" instance=ExtResource("12_s7t5f")]
+position = Vector2(433, 628)
+
+[node name="RespawnPoint2" parent="GameManager" instance=ExtResource("12_s7t5f")]
+position = Vector2(697, 543)
+
+[node name="RespawnPoint3" parent="GameManager" instance=ExtResource("12_s7t5f")]
+position = Vector2(819, 377)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfjvulruu4aw6"]
+
+[ext_resource type="Texture2D" uid="uid://cvt3msbm02ud5" path="res://Art/Jake/respawnpoint.png" id="1_yb6c8"]
+
+[node name="RespawnPoint" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yb6c8")
