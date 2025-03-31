@@ -102,6 +102,106 @@ attack3={
 "deadzone": 0.2,
 "events": []
 }
+left4={
+"deadzone": 0.2,
+"events": []
+}
+left5={
+"deadzone": 0.2,
+"events": []
+}
+left6={
+"deadzone": 0.2,
+"events": []
+}
+left7={
+"deadzone": 0.2,
+"events": []
+}
+left8={
+"deadzone": 0.2,
+"events": []
+}
+up4={
+"deadzone": 0.2,
+"events": []
+}
+up5={
+"deadzone": 0.2,
+"events": []
+}
+up6={
+"deadzone": 0.2,
+"events": []
+}
+up7={
+"deadzone": 0.2,
+"events": []
+}
+up8={
+"deadzone": 0.2,
+"events": []
+}
+right4={
+"deadzone": 0.2,
+"events": []
+}
+right5={
+"deadzone": 0.2,
+"events": []
+}
+right6={
+"deadzone": 0.2,
+"events": []
+}
+right7={
+"deadzone": 0.2,
+"events": []
+}
+right8={
+"deadzone": 0.2,
+"events": []
+}
+down4={
+"deadzone": 0.2,
+"events": []
+}
+down5={
+"deadzone": 0.2,
+"events": []
+}
+down6={
+"deadzone": 0.2,
+"events": []
+}
+down7={
+"deadzone": 0.2,
+"events": []
+}
+down8={
+"deadzone": 0.2,
+"events": []
+}
+attack4={
+"deadzone": 0.2,
+"events": []
+}
+attack5={
+"deadzone": 0.2,
+"events": []
+}
+attack6={
+"deadzone": 0.2,
+"events": []
+}
+attack7={
+"deadzone": 0.2,
+"events": []
+}
+attack8={
+"deadzone": 0.2,
+"events": []
+}
 
 [rendering]
 

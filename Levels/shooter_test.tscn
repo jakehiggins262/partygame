@@ -367,6 +367,26 @@ player_id = 1
 position = Vector2(449, 173)
 player_id = 3
 
+[node name="Player4" parent="." instance=ExtResource("11_y7dwh")]
+position = Vector2(125, 617)
+player_id = 8
+
+[node name="Player5" parent="." instance=ExtResource("11_y7dwh")]
+position = Vector2(807, 694)
+player_id = 7
+
+[node name="Player6" parent="." instance=ExtResource("11_y7dwh")]
+position = Vector2(1171, 347)
+player_id = 4
+
+[node name="Player7" parent="." instance=ExtResource("11_y7dwh")]
+position = Vector2(1594, 561)
+player_id = 6
+
+[node name="Player8" parent="." instance=ExtResource("11_y7dwh")]
+position = Vector2(1532, 269)
+player_id = 5
+
 [node name="GunPickup" parent="." instance=ExtResource("11_s7t5f")]
 position = Vector2(249, 167)
 
@@ -379,4 +399,19 @@ position = Vector2(433, 628)
 position = Vector2(697, 543)
 
 [node name="RespawnPoint3" parent="GameManager" instance=ExtResource("12_s7t5f")]
-position = Vector2(819, 377)
+position = Vector2(840, 370)
+
+[node name="RespawnPoint4" parent="GameManager" instance=ExtResource("12_s7t5f")]
+position = Vector2(701, 801)
+
+[node name="RespawnPoint5" parent="GameManager" instance=ExtResource("12_s7t5f")]
+position = Vector2(935, 675)
+
+[node name="RespawnPoint6" parent="GameManager" instance=ExtResource("12_s7t5f")]
+position = Vector2(1218, 636)
+
+[node name="RespawnPoint7" parent="GameManager" instance=ExtResource("12_s7t5f")]
+position = Vector2(1368, 486)
+
+[node name="RespawnPoint8" parent="GameManager" instance=ExtResource("12_s7t5f")]
+position = Vector2(1378, 364)
