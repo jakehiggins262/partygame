@@ -12,3 +12,7 @@ texture = ExtResource("1_7rnum")
 
 [node name="BulletSpawn" type="Marker2D" parent="."]
 position = Vector2(4, -1)
+
+[node name="FireRateTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]
