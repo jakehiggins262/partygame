@@ -11,9 +11,22 @@ var bullet_path = preload("res://Scenes/bullet.tscn")
 var last_direction: Vector2 = Vector2.ZERO
 var gun = preload("res://Scenes/Weapons/gun.tscn")
 var sword = preload("res://Scenes/Weapons/sword.tscn")
+# Predefined player colors (Adjust as needed)
+var player_colors = [
+	Color(0.0, 0.5, 1.0),  # Blue for Player 1
+	Color(1.0, 0.1, 0.1),  # Red for Player 2
+	Color(0.1, 1.0, 0.1),  # Green for Player 3
+	Color(1.0, 1.0, 0.1),  # Yellow for Player 4
+	Color(1.0, 0.1, 1.0),  # Purple for Player 5
+	Color(1.0, 0.5, 0.0),  # Orange for Player 6
+	Color(0.1, 1.0, 1.0),  # Cyan for Player 7
+	Color(0.5, 0.1, 0.5)   # Dark Purple for Player 8
+]
 
 func _ready():
 	equip_weapon(sword)
+	change_color()
+
 
 #animation player init
 #@onready var animation_player := $AnimationPlayer
@@ -91,3 +104,9 @@ func respawn():
 	equip_weapon(sword)
 	set_physics_process(true)
 	$CollisionShape2D.set_deferred("disabled", false)
+
+func change_color():
+	if player_id >= 1 and player_id <= 8:
+		$Sprite2D.modulate = player_colors[player_id - 1]
+	else:
+		print("Invalid player ID:", player_id)
