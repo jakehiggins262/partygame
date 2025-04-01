@@ -359,12 +359,12 @@ layer_2/tile_data = PackedInt32Array(0, 327681, 1, 65536, 131073, 1, 131072, 131
 position = Vector2(960, 544)
 script = ExtResource("9_gxbxc")
 
-[node name="Player" parent="." instance=ExtResource("10_0l0uw")]
+[node name="Player1" parent="." instance=ExtResource("10_0l0uw")]
 position = Vector2(578, 159)
+player_id = 1
 
 [node name="Player2" parent="." instance=ExtResource("10_0l0uw")]
 position = Vector2(59, 349)
-player_id = 1
 
 [node name="Player3" parent="." instance=ExtResource("10_0l0uw")]
 position = Vector2(69, 802)
@@ -372,23 +372,23 @@ player_id = 3
 
 [node name="Player4" parent="." instance=ExtResource("10_0l0uw")]
 position = Vector2(605, 985)
-player_id = 8
+player_id = 4
 
 [node name="Player5" parent="." instance=ExtResource("10_0l0uw")]
 position = Vector2(1270, 979)
-player_id = 7
+player_id = 5
 
 [node name="Player6" parent="." instance=ExtResource("10_0l0uw")]
 position = Vector2(1857, 765)
-player_id = 4
+player_id = 6
 
 [node name="Player7" parent="." instance=ExtResource("10_0l0uw")]
 position = Vector2(1866, 347)
-player_id = 6
+player_id = 7
 
 [node name="Player8" parent="." instance=ExtResource("10_0l0uw")]
 position = Vector2(1269, 173)
-player_id = 5
+player_id = 8
 
 [node name="GunPickup" parent="." instance=ExtResource("11_jdwmi")]
 position = Vector2(395, 561)

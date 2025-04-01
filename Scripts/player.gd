@@ -1,16 +1,15 @@
 extends CharacterBody2D
 
-# Public variables
 @export var move_speed: float = 250  # @export allows us to edit this value in the inspector on the right
 @export var starting_direction: Vector2 = Vector2(0, 1)
 @export var player_id := 0
 
-# Private variables
 var current_weapon: Weapon
 var bullet_path = preload("res://Scenes/bullet.tscn")
 var last_direction: Vector2 = Vector2.ZERO
 var gun = preload("res://Scenes/Weapons/gun.tscn")
 var sword = preload("res://Scenes/Weapons/sword.tscn")
+var is_dead = false
 # Predefined player colors (Adjust as needed)
 var player_colors = [
 	Color(0.0, 0.5, 1.0),  # Blue for Player 1
@@ -79,8 +78,12 @@ func equip_weapon(weapon_scene: PackedScene):
 		#print("collided with player")
 
 func take_damage(amount: int) -> void:
-	print("Player", player_id, "took damage and will respawn.")
+	if is_dead:
+		return  # Ignore damage if already dead
 	
+	is_dead = true  # Mark player as dead
+	print("Player", player_id, "took damage and will respawn.")
+	move_speed = 250
 	# Hide the player and disable movement
 	hide()
 	set_physics_process(false)
@@ -92,9 +95,10 @@ func take_damage(amount: int) -> void:
 	await get_tree().create_timer(2.0).timeout
 	
 	respawn()
-
+	
 func respawn():
-	var game_manager = get_tree().root.get_node("Game_Level/GameManager")
+	var game_manager = get_tree().current_scene.find_child("GameManager", true, false)
+
 	if game_manager and player_id in game_manager.respawn_points:
 		global_position = game_manager.respawn_points[player_id]
 		print("Player", player_id, "respawned at:", global_position)
@@ -104,6 +108,8 @@ func respawn():
 	equip_weapon(sword)
 	set_physics_process(true)
 	$CollisionShape2D.set_deferred("disabled", false)
+	
+	is_dead = false  # Allow taking damage again
 
 func change_color():
 	if player_id >= 1 and player_id <= 8:
