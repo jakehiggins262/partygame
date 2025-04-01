@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgus7k46xonnt"]
+[gd_scene load_steps=3 format=3 uid="uid://dgus7k46xonnt"]
 
 [ext_resource type="Script" uid="uid://cbonhlb872myt" path="res://Scripts/game_manager.gd" id="1_oj352"]
+[ext_resource type="PackedScene" uid="uid://bf0hpqippgsr2" path="res://Scenes/Pickups/speed_powerup.tscn" id="2_e5fcp"]
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_oj352")
+speed_powerup_scene = ExtResource("2_e5fcp")

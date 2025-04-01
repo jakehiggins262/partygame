@@ -110,3 +110,6 @@ func change_color():
 		$Sprite2D.modulate = player_colors[player_id - 1]
 	else:
 		print("Invalid player ID:", player_id)
+		
+func apply_speed_boost():
+	move_speed = 500

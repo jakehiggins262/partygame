@@ -1,13 +1,40 @@
 extends Node2D
 
-# Dictionary to store respawn points by player ID
+@export var speed_powerup_scene: PackedScene
+@export var num_powerups: int = 5  # Number of powerups to spawn
+@export var map_width: float = 1920
+@export var map_height: float = 1080
+@export var respawn_interval: float = 10.0  # Time between powerup spawns
+
 var respawn_points = {}
 
 func _ready():
-	# Find and store all respawn points based on their name
+	# Find and store all respawn points by player ID
 	for i in range(1, 9):
 		var point = get_node_or_null("RespawnPoint" + str(i))
 		if point:
 			respawn_points[i] = point.global_position
 		else:
 			print("RespawnPoint" + str(i) + " not found.")
+	
+	# Start the timer for powerup spawns
+	var timer = Timer.new()
+	timer.wait_time = respawn_interval
+	timer.autostart = true
+	timer.timeout.connect(_on_timer_timeout)
+	add_child(timer)
+
+func _on_timer_timeout():
+	spawn_speed_powerup()
+
+func spawn_speed_powerup():
+	if speed_powerup_scene:
+		var powerup_instance = speed_powerup_scene.instantiate()
+		powerup_instance.position = get_random_position()
+		add_child(powerup_instance)
+		print("Speed powerup spawned at:", powerup_instance.position)
+
+func get_random_position() -> Vector2:
+	var random_x = randf_range(100, map_width - 100)
+	var random_y = randf_range(100, map_height - 100)
+	return Vector2(random_x, random_y)

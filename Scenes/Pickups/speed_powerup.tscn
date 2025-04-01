@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf0hpqippgsr2"]
+
+[ext_resource type="Script" uid="uid://d2omhylb7xp7q" path="res://Scripts/speed_powerup.gd" id="1_y11oe"]
+[ext_resource type="Texture2D" uid="uid://bhd2jyjsljooj" path="res://Art/Jake/speedup.png" id="2_53wis"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y11oe"]
+
+[node name="SpeedPowerup" type="Area2D"]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_y11oe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_53wis")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y11oe")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
