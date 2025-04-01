@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://br1d0p3lcftby"]
+[gd_scene load_steps=24 format=3 uid="uid://br1d0p3lcftby"]
 
 [ext_resource type="Texture2D" uid="uid://c5jf5xpt5a6jc" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="3_6nyvv"]
 [ext_resource type="Texture2D" uid="uid://02v07bqpq2yg" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="4_1sxg3"]
@@ -11,10 +11,11 @@
 [ext_resource type="Script" uid="uid://dgorgt5b70isq" path="res://Cameras/camera_2d.gd" id="11_r1bxr"]
 [ext_resource type="PackedScene" uid="uid://cr6tbfme888tv" path="res://Scenes/Pickups/gun_pickup.tscn" id="11_s7t5f"]
 [ext_resource type="PackedScene" uid="uid://bk8x0m7bwsd4t" path="res://Scenes/player.tscn" id="11_y7dwh"]
+[ext_resource type="PackedScene" uid="uid://dttvx5pu83xh8" path="res://Scenes/Pickups/sword_pickup.tscn" id="12_6nyvv"]
 [ext_resource type="PackedScene" uid="uid://dfjvulruu4aw6" path="res://Scenes/respawn_point.tscn" id="12_s7t5f"]
 [ext_resource type="PackedScene" uid="uid://dgus7k46xonnt" path="res://Scenes/game_manager.tscn" id="13_d8c3j"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jw0rm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nyvv"]
 texture = ExtResource("3_6nyvv")
 0:0/0 = 0
 1:0/0 = 0
@@ -88,7 +89,7 @@ texture = ExtResource("3_6nyvv")
 7:6/0 = 0
 8:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah7re"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1sxg3"]
 texture = ExtResource("4_1sxg3")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, 8, -4.94611, 8, -5.48569, -4.76626, 8, -4.94612)
@@ -168,7 +169,7 @@ texture = ExtResource("4_1sxg3")
 9:6/0 = 0
 10:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6tkkn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_daphi"]
 texture = ExtResource("5_daphi")
 0:0/0 = 0
 1:0/0 = 0
@@ -241,14 +242,14 @@ texture = ExtResource("5_daphi")
 8:6/0 = 0
 9:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lq5e"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jumnr"]
 texture = ExtResource("6_jumnr")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55elf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ub1u0"]
 texture = ExtResource("7_ub1u0")
 0:0/0 = 0
 1:0/0 = 0
@@ -284,7 +285,7 @@ texture = ExtResource("7_ub1u0")
 5:4/0 = 0
 6:4/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sf1a6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p156b"]
 texture = ExtResource("8_p156b")
 0:0/0 = 0
 1:0/0 = 0
@@ -301,7 +302,7 @@ texture = ExtResource("8_p156b")
 2:2/0 = 0
 3:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fct0e"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7wx6"]
 texture = ExtResource("9_q7wx6")
 0:0/0 = 0
 1:0/0 = 0
@@ -320,7 +321,7 @@ texture = ExtResource("9_q7wx6")
 2:3/0 = 0
 3:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pl1jo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r42vy"]
 texture = ExtResource("10_r42vy")
 0:0/0 = 0
 0:1/0 = 0
@@ -329,14 +330,14 @@ texture = ExtResource("10_r42vy")
 
 [sub_resource type="TileSet" id="TileSet_sh88w"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_jw0rm")
-sources/1 = SubResource("TileSetAtlasSource_ah7re")
-sources/2 = SubResource("TileSetAtlasSource_6tkkn")
-sources/3 = SubResource("TileSetAtlasSource_2lq5e")
-sources/4 = SubResource("TileSetAtlasSource_55elf")
-sources/5 = SubResource("TileSetAtlasSource_sf1a6")
-sources/6 = SubResource("TileSetAtlasSource_fct0e")
-sources/7 = SubResource("TileSetAtlasSource_pl1jo")
+sources/0 = SubResource("TileSetAtlasSource_6nyvv")
+sources/1 = SubResource("TileSetAtlasSource_1sxg3")
+sources/2 = SubResource("TileSetAtlasSource_daphi")
+sources/3 = SubResource("TileSetAtlasSource_jumnr")
+sources/4 = SubResource("TileSetAtlasSource_ub1u0")
+sources/5 = SubResource("TileSetAtlasSource_p156b")
+sources/6 = SubResource("TileSetAtlasSource_q7wx6")
+sources/7 = SubResource("TileSetAtlasSource_r42vy")
 
 [node name="Game_Level" type="Node2D"]
 
@@ -390,7 +391,11 @@ player_id = 5
 [node name="GunPickup" parent="." instance=ExtResource("11_s7t5f")]
 position = Vector2(249, 167)
 
+[node name="SwordPickup" parent="." instance=ExtResource("12_6nyvv")]
+position = Vector2(429, 390)
+
 [node name="GameManager" parent="." instance=ExtResource("13_d8c3j")]
+position = Vector2(-4, 2)
 
 [node name="RespawnPoint1" parent="GameManager" instance=ExtResource("12_s7t5f")]
 position = Vector2(433, 628)
