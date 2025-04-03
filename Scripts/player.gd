@@ -53,7 +53,7 @@ func _physics_process(_delta):
 	
 func _process(_delta):
 	# Player presses attack button
-	if Input.is_action_just_pressed("attack" + str(player_id)):
+	if Input.is_action_just_pressed("attack" + str(player_id)) and not is_dead:
 		current_weapon.attack()
 	## Player presses place structure button
 	#if Input.is_action_just_pressed("place" + str(player_id)):
