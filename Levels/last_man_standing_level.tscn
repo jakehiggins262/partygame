@@ -1,22 +1,22 @@
 [gd_scene load_steps=24 format=3 uid="uid://c4f7cvf62ge2o"]
 
-[ext_resource type="Texture2D" uid="uid://c5jf5xpt5a6jc" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_s38te"]
-[ext_resource type="Texture2D" uid="uid://02v07bqpq2yg" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="2_nv0qv"]
-[ext_resource type="Texture2D" uid="uid://dmmdomd2lglne" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt.png" id="3_5bjpi"]
-[ext_resource type="Texture2D" uid="uid://dcditxcsgvduw" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="4_ugeoj"]
-[ext_resource type="Texture2D" uid="uid://h8mpmm7sfglp" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Roof_Tilset.png" id="5_xs4df"]
-[ext_resource type="Texture2D" uid="uid://bbp3wvih8hvks" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="6_d63q8"]
-[ext_resource type="Texture2D" uid="uid://c3r6a4wldi5sw" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="7_r1348"]
-[ext_resource type="Texture2D" uid="uid://fyb7u3yjydf8" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="8_c474o"]
-[ext_resource type="Script" uid="uid://dgorgt5b70isq" path="res://Cameras/camera_2d.gd" id="9_gxbxc"]
-[ext_resource type="PackedScene" uid="uid://bk8x0m7bwsd4t" path="res://Scenes/player.tscn" id="10_0l0uw"]
-[ext_resource type="PackedScene" uid="uid://cr6tbfme888tv" path="res://Scenes/Pickups/gun_pickup.tscn" id="11_jdwmi"]
-[ext_resource type="PackedScene" uid="uid://dttvx5pu83xh8" path="res://Scenes/Pickups/sword_pickup.tscn" id="12_x5wqt"]
-[ext_resource type="PackedScene" uid="uid://dgus7k46xonnt" path="res://Scenes/game_manager.tscn" id="13_ibb3p"]
-[ext_resource type="PackedScene" uid="uid://dfjvulruu4aw6" path="res://Scenes/respawn_point.tscn" id="14_sn1j3"]
+[ext_resource type="Texture2D" uid="uid://c5jf5xpt5a6jc" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_w1gwd"]
+[ext_resource type="Texture2D" uid="uid://02v07bqpq2yg" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="2_ae7a6"]
+[ext_resource type="Texture2D" uid="uid://dmmdomd2lglne" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt.png" id="3_e01rj"]
+[ext_resource type="Texture2D" uid="uid://dcditxcsgvduw" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="4_pkfns"]
+[ext_resource type="Texture2D" uid="uid://h8mpmm7sfglp" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Roof_Tilset.png" id="5_l2b3o"]
+[ext_resource type="Texture2D" uid="uid://bbp3wvih8hvks" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="6_ajvu0"]
+[ext_resource type="Texture2D" uid="uid://c3r6a4wldi5sw" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="7_t6r1v"]
+[ext_resource type="Texture2D" uid="uid://fyb7u3yjydf8" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="8_3dw7y"]
+[ext_resource type="Script" uid="uid://dgorgt5b70isq" path="res://Cameras/camera_2d.gd" id="9_luh4q"]
+[ext_resource type="PackedScene" uid="uid://bk8x0m7bwsd4t" path="res://Scenes/player.tscn" id="10_cka6f"]
+[ext_resource type="PackedScene" uid="uid://cr6tbfme888tv" path="res://Scenes/Pickups/gun_pickup.tscn" id="11_w13p4"]
+[ext_resource type="PackedScene" uid="uid://dttvx5pu83xh8" path="res://Scenes/Pickups/sword_pickup.tscn" id="12_y0ol3"]
+[ext_resource type="PackedScene" uid="uid://dgus7k46xonnt" path="res://Scenes/game_manager.tscn" id="13_r8eqh"]
+[ext_resource type="PackedScene" uid="uid://dfjvulruu4aw6" path="res://Scenes/respawn_point.tscn" id="14_jtu2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1k1yg"]
-texture = ExtResource("1_s38te")
+texture = ExtResource("1_w1gwd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -90,7 +90,7 @@ texture = ExtResource("1_s38te")
 8:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1xbk"]
-texture = ExtResource("2_nv0qv")
+texture = ExtResource("2_ae7a6")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, 8, -4.94611, 8, -5.48569, -4.76626, 8, -4.94612)
 1:0/0 = 0
@@ -170,7 +170,7 @@ texture = ExtResource("2_nv0qv")
 10:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aw7xw"]
-texture = ExtResource("3_5bjpi")
+texture = ExtResource("3_e01rj")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -243,14 +243,14 @@ texture = ExtResource("3_5bjpi")
 9:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bew03"]
-texture = ExtResource("4_ugeoj")
+texture = ExtResource("4_pkfns")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tsaof"]
-texture = ExtResource("5_xs4df")
+texture = ExtResource("5_l2b3o")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -286,7 +286,7 @@ texture = ExtResource("5_xs4df")
 6:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ts2ji"]
-texture = ExtResource("6_d63q8")
+texture = ExtResource("6_ajvu0")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -303,7 +303,7 @@ texture = ExtResource("6_d63q8")
 3:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xxpt"]
-texture = ExtResource("7_r1348")
+texture = ExtResource("7_t6r1v")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -322,7 +322,7 @@ texture = ExtResource("7_r1348")
 3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veo1h"]
-texture = ExtResource("8_c474o")
+texture = ExtResource("8_3dw7y")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
@@ -357,80 +357,80 @@ layer_2/tile_data = PackedInt32Array(0, 327681, 1, 65536, 131073, 1, 131072, 131
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 544)
-script = ExtResource("9_gxbxc")
+script = ExtResource("9_luh4q")
 
-[node name="Player1" parent="." instance=ExtResource("10_0l0uw")]
+[node name="Player1" parent="." instance=ExtResource("10_cka6f")]
 position = Vector2(578, 159)
 player_id = 1
 
-[node name="Player2" parent="." instance=ExtResource("10_0l0uw")]
+[node name="Player2" parent="." instance=ExtResource("10_cka6f")]
 position = Vector2(59, 349)
 
-[node name="Player3" parent="." instance=ExtResource("10_0l0uw")]
+[node name="Player3" parent="." instance=ExtResource("10_cka6f")]
 position = Vector2(69, 802)
 player_id = 3
 
-[node name="Player4" parent="." instance=ExtResource("10_0l0uw")]
+[node name="Player4" parent="." instance=ExtResource("10_cka6f")]
 position = Vector2(605, 985)
 player_id = 4
 
-[node name="Player5" parent="." instance=ExtResource("10_0l0uw")]
+[node name="Player5" parent="." instance=ExtResource("10_cka6f")]
 position = Vector2(1270, 979)
 player_id = 5
 
-[node name="Player6" parent="." instance=ExtResource("10_0l0uw")]
+[node name="Player6" parent="." instance=ExtResource("10_cka6f")]
 position = Vector2(1857, 765)
 player_id = 6
 
-[node name="Player7" parent="." instance=ExtResource("10_0l0uw")]
+[node name="Player7" parent="." instance=ExtResource("10_cka6f")]
 position = Vector2(1866, 347)
 player_id = 7
 
-[node name="Player8" parent="." instance=ExtResource("10_0l0uw")]
+[node name="Player8" parent="." instance=ExtResource("10_cka6f")]
 position = Vector2(1269, 173)
 player_id = 8
 
-[node name="GunPickup" parent="." instance=ExtResource("11_jdwmi")]
+[node name="GunPickup" parent="." instance=ExtResource("11_w13p4")]
 position = Vector2(395, 561)
 
-[node name="SwordPickup" parent="." instance=ExtResource("12_x5wqt")]
+[node name="SwordPickup" parent="." instance=ExtResource("12_y0ol3")]
 position = Vector2(851, 340)
 
-[node name="GameManager" parent="." instance=ExtResource("13_ibb3p")]
+[node name="GameManager" parent="." instance=ExtResource("13_r8eqh")]
 position = Vector2(-4, 2)
 
-[node name="RespawnPoint1" parent="GameManager" instance=ExtResource("14_sn1j3")]
+[node name="RespawnPoint1" parent="GameManager" instance=ExtResource("14_jtu2v")]
 position = Vector2(587, 155)
 
-[node name="RespawnPoint2" parent="GameManager" instance=ExtResource("14_sn1j3")]
+[node name="RespawnPoint2" parent="GameManager" instance=ExtResource("14_jtu2v")]
 position = Vector2(78, 345)
 
-[node name="RespawnPoint3" parent="GameManager" instance=ExtResource("14_sn1j3")]
+[node name="RespawnPoint3" parent="GameManager" instance=ExtResource("14_jtu2v")]
 position = Vector2(81, 805)
 
-[node name="RespawnPoint4" parent="GameManager" instance=ExtResource("14_sn1j3")]
+[node name="RespawnPoint4" parent="GameManager" instance=ExtResource("14_jtu2v")]
 position = Vector2(613, 989)
 
-[node name="RespawnPoint5" parent="GameManager" instance=ExtResource("14_sn1j3")]
+[node name="RespawnPoint5" parent="GameManager" instance=ExtResource("14_jtu2v")]
 position = Vector2(1265, 971)
 
-[node name="RespawnPoint6" parent="GameManager" instance=ExtResource("14_sn1j3")]
+[node name="RespawnPoint6" parent="GameManager" instance=ExtResource("14_jtu2v")]
 position = Vector2(1874, 766)
 
-[node name="RespawnPoint7" parent="GameManager" instance=ExtResource("14_sn1j3")]
+[node name="RespawnPoint7" parent="GameManager" instance=ExtResource("14_jtu2v")]
 position = Vector2(1874, 347)
 
-[node name="RespawnPoint8" parent="GameManager" instance=ExtResource("14_sn1j3")]
+[node name="RespawnPoint8" parent="GameManager" instance=ExtResource("14_jtu2v")]
 position = Vector2(1273, 176)
 
-[node name="GunPickup2" parent="." instance=ExtResource("11_jdwmi")]
+[node name="GunPickup2" parent="." instance=ExtResource("11_w13p4")]
 position = Vector2(1499, 544)
 
-[node name="SwordPickup2" parent="." instance=ExtResource("12_x5wqt")]
+[node name="SwordPickup2" parent="." instance=ExtResource("12_y0ol3")]
 position = Vector2(1078, 760)
 
-[node name="GunPickup3" parent="." instance=ExtResource("11_jdwmi")]
+[node name="GunPickup3" parent="." instance=ExtResource("11_w13p4")]
 position = Vector2(1077, 341)
 
-[node name="GunPickup4" parent="." instance=ExtResource("11_jdwmi")]
+[node name="GunPickup4" parent="." instance=ExtResource("11_w13p4")]
 position = Vector2(847, 786)

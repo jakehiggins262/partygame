@@ -26,7 +26,6 @@ func _ready():
 	equip_weapon(sword)
 	change_color()
 
-
 #animation player init
 #@onready var animation_player := $AnimationPlayer
 
