@@ -23,8 +23,8 @@ func _physics_process(_delta):
 	move_and_slide()
 
 	# Check if the bullet is outside the defined boundaries
-	if global_position.x < left_boundary or global_position.x > right_boundary or global_position.y < top_boundary or global_position.y > bottom_boundary:
-		queue_free()
+	#if global_position.x < left_boundary or global_position.x > right_boundary or global_position.y < top_boundary or global_position.y > bottom_boundary:
+		#queue_free()
 
 func _on_timer_timeout() -> void:
 	queue_free()

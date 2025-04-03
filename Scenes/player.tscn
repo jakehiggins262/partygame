@@ -20,7 +20,7 @@ player_id = 2
 rotation = 1.5708
 texture = ExtResource("2_6t5aa")
 
-[node name="MyHurtbox" type="Area2D" parent="Sprite2D"]
+[node name="MyHurtbox" type="Area2D" parent="Sprite2D" groups=["players"]]
 script = ExtResource("3_6t5aa")
 metadata/_custom_type_script = "uid://bjlfbm4nmvyj0"
 

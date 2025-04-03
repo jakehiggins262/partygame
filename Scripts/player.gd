@@ -59,6 +59,7 @@ func _process(_delta):
 	#if Input.is_action_just_pressed("place" + str(player_id)):
 		#place()
 
+
 func equip_weapon(weapon_scene: PackedScene):
 	# Remove current weapon if it exists
 	if current_weapon:
@@ -68,6 +69,7 @@ func equip_weapon(weapon_scene: PackedScene):
 	var weapon_instance = weapon_scene.instantiate()
 	$WeaponHolder.add_child(weapon_instance)
 	current_weapon = weapon_instance
+	
 
 #func _on_my_hurtbox_area_entered(area: Area2D) -> void:
 	#if area.is_in_group("bullet"):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c4f7cvf62ge2o"]
+[gd_scene load_steps=25 format=3 uid="uid://c4f7cvf62ge2o"]
 
 [ext_resource type="Texture2D" uid="uid://c5jf5xpt5a6jc" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_w1gwd"]
 [ext_resource type="Texture2D" uid="uid://02v07bqpq2yg" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="2_ae7a6"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dttvx5pu83xh8" path="res://Scenes/Pickups/sword_pickup.tscn" id="12_y0ol3"]
 [ext_resource type="PackedScene" uid="uid://dgus7k46xonnt" path="res://Scenes/game_manager.tscn" id="13_r8eqh"]
 [ext_resource type="PackedScene" uid="uid://dfjvulruu4aw6" path="res://Scenes/respawn_point.tscn" id="14_jtu2v"]
+[ext_resource type="Script" uid="uid://bjlfbm4nmvyj0" path="res://Scripts/MyHurtbox.gd" id="15_ae7a6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1k1yg"]
 texture = ExtResource("1_w1gwd")
@@ -434,3 +435,10 @@ position = Vector2(1077, 341)
 
 [node name="GunPickup4" parent="." instance=ExtResource("11_w13p4")]
 position = Vector2(847, 786)
+
+[node name="MyHurtbox" type="Area2D" parent="."]
+script = ExtResource("15_ae7a6")
+metadata/_custom_type_script = "uid://bjlfbm4nmvyj0"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MyHurtbox"]
+polygon = PackedVector2Array(-14, 12, 13, 114, 9, 1072, 1915, 1074, 1917, 109, 14, 110, 2019, 41, 1947, 1146, -66, 1089)
