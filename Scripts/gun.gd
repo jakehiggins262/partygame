@@ -13,6 +13,9 @@ func attack():
 		$FireRateTimer.start(fire_rate)
 
 func fire():
+	# Access the player_id from the parent player node
+	var player_id = get_parent().get_parent().player_id  # Get player_id from the player node (assumes Gun is a child of the player)
+
 	# Instantiate the bullet scene (create an instance of the bullet)
 	var bullet = bullet_scene.instantiate()
 
@@ -22,6 +25,7 @@ func fire():
 	bullet.rota = global_rotation
 	bullet.speed = bullet_speed  # Pass bullet speed from the gun
 	bullet.scale = Vector2(2, 2)
+	bullet.player_id = player_id  # Set the player's ID on the bullet
 
 	# Add the bullet to the scene
 	get_tree().current_scene.add_child(bullet)
