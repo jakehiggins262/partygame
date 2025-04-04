@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var speed_powerup_scene: PackedScene
+@export var powerup_scenes: Array[PackedScene] = []
+
 @export var num_powerups: int = 5  # Number of powerups to spawn
 @export var map_width: float = 1920
 @export var map_height: float = 1080
@@ -9,6 +10,8 @@ extends Node2D
 var respawn_points = {}
 
 func _ready():
+	randomize()
+	
 	# Find and store all respawn points by player ID
 	for i in range(1, 9):
 		var point = get_node_or_null("RespawnPoint" + str(i))
@@ -25,11 +28,18 @@ func _ready():
 	add_child(timer)
 
 func _on_timer_timeout():
-	spawn_speed_powerup()
+	if powerup_scenes.is_empty():
+		print("No powerup scenes assigned.")
+		return
+	
+	var random_index = randi() % powerup_scenes.size()
+	var random_powerup_scene = powerup_scenes[random_index]
+	
+	spawn_powerup(random_powerup_scene)
 
-func spawn_speed_powerup():
-	if speed_powerup_scene:
-		var powerup_instance = speed_powerup_scene.instantiate()
+func spawn_powerup(scene: PackedScene):
+	if scene:
+		var powerup_instance = scene.instantiate()
 		powerup_instance.position = get_random_position()
 		add_child(powerup_instance)
 

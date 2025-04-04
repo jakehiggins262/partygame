@@ -168,9 +168,6 @@ func get_place_position(direction: Vector2) -> Vector2:
 
 	return collision_point
 
-
-
-
 func place_block():
 	# Get the direction the player is facing
 	var direction = get_facing_direction()  # You can create your own method to get direction
