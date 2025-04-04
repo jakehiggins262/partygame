@@ -391,12 +391,6 @@ player_id = 7
 position = Vector2(1269, 173)
 player_id = 8
 
-[node name="GunPickup" parent="." instance=ExtResource("11_w13p4")]
-position = Vector2(395, 561)
-
-[node name="SwordPickup" parent="." instance=ExtResource("12_y0ol3")]
-position = Vector2(851, 340)
-
 [node name="GameManager" parent="." instance=ExtResource("13_r8eqh")]
 position = Vector2(-4, 2)
 
@@ -424,6 +418,12 @@ position = Vector2(1874, 347)
 [node name="RespawnPoint8" parent="GameManager" instance=ExtResource("14_jtu2v")]
 position = Vector2(1273, 176)
 
+[node name="GunPickup" parent="." instance=ExtResource("11_w13p4")]
+position = Vector2(395, 561)
+
+[node name="SwordPickup" parent="." instance=ExtResource("12_y0ol3")]
+position = Vector2(851, 340)
+
 [node name="GunPickup2" parent="." instance=ExtResource("11_w13p4")]
 position = Vector2(1499, 544)
 
@@ -442,3 +442,34 @@ metadata/_custom_type_script = "uid://bjlfbm4nmvyj0"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MyHurtbox"]
 polygon = PackedVector2Array(-14, 12, 13, 114, 9, 1072, 1915, 1074, 1917, 109, 14, 110, 2019, 41, 1947, 1146, -66, 1089)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="MyHurtbox"]
+polygon = PackedVector2Array(262, 283, 263, 472, 315, 473, 315, 365, 490, 362, 491, 283)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="MyHurtbox"]
+position = Vector2(478, -53)
+polygon = PackedVector2Array(262, 283, 259, 485, 320, 483, 321, 324, 400, 324, 399, 280)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="MyHurtbox"]
+position = Vector2(879, -58)
+polygon = PackedVector2Array(320, 487, 259, 485, 257, 331, 180, 332, 178, 287, 320, 287)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="MyHurtbox"]
+position = Vector2(1364, -42)
+polygon = PackedVector2Array(316, 474, 270, 473, 268, 346, 77, 348, 75, 286, 318, 287)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="MyHurtbox"]
+position = Vector2(1295, 356)
+polygon = PackedVector2Array(275, 449, 82, 449, 82, 495, 338, 495, 334, 289, 275, 286)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="MyHurtbox"]
+position = Vector2(862, 389)
+polygon = PackedVector2Array(275, 449, 195, 447, 196, 494, 338, 495, 336, 319, 275, 318)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="MyHurtbox"]
+position = Vector2(3, 367)
+polygon = PackedVector2Array(255, 481, 511, 481, 507, 405, 333, 398, 330, 266, 252, 261)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="MyHurtbox"]
+position = Vector2(465, 404)
+polygon = PackedVector2Array(275, 472, 446, 474, 442, 430, 333, 432, 332, 305, 274, 301)

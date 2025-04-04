@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://br1d0p3lcftby"]
+[gd_scene load_steps=25 format=3 uid="uid://br1d0p3lcftby"]
 
 [ext_resource type="Texture2D" uid="uid://c5jf5xpt5a6jc" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="3_6nyvv"]
 [ext_resource type="Texture2D" uid="uid://02v07bqpq2yg" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="4_1sxg3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dttvx5pu83xh8" path="res://Scenes/Pickups/sword_pickup.tscn" id="12_6nyvv"]
 [ext_resource type="PackedScene" uid="uid://dfjvulruu4aw6" path="res://Scenes/respawn_point.tscn" id="12_s7t5f"]
 [ext_resource type="PackedScene" uid="uid://dgus7k46xonnt" path="res://Scenes/game_manager.tscn" id="13_d8c3j"]
+[ext_resource type="PackedScene" uid="uid://diojf4r6rsi2o" path="res://Scenes/Pickups/block_powerup.tscn" id="15_1sxg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nyvv"]
 texture = ExtResource("3_6nyvv")
@@ -420,3 +421,30 @@ position = Vector2(1368, 486)
 
 [node name="RespawnPoint8" parent="GameManager" instance=ExtResource("12_s7t5f")]
 position = Vector2(1378, 364)
+
+[node name="block_powerup" parent="." instance=ExtResource("15_1sxg3")]
+position = Vector2(492, 528)
+
+[node name="block_powerup2" parent="." instance=ExtResource("15_1sxg3")]
+position = Vector2(258, 323)
+
+[node name="block_powerup3" parent="." instance=ExtResource("15_1sxg3")]
+position = Vector2(332, 549)
+
+[node name="block_powerup4" parent="." instance=ExtResource("15_1sxg3")]
+position = Vector2(450, 328)
+
+[node name="block_powerup5" parent="." instance=ExtResource("15_1sxg3")]
+position = Vector2(423, 459)
+
+[node name="block_powerup6" parent="." instance=ExtResource("15_1sxg3")]
+position = Vector2(197, 442)
+
+[node name="block_powerup7" parent="." instance=ExtResource("15_1sxg3")]
+position = Vector2(86, 460)
+
+[node name="block_powerup8" parent="." instance=ExtResource("15_1sxg3")]
+position = Vector2(210, 592)
+
+[node name="block_powerup9" parent="." instance=ExtResource("15_1sxg3")]
+position = Vector2(277, 413)

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var move_speed: float = 250  # @export allows us to edit this value in the inspector on the right
 @export var starting_direction: Vector2 = Vector2(0, 1)
 @export var player_id := 0
+@export var block_scene: PackedScene
 
 var current_weapon: Weapon
 var bullet_path = preload("res://Scenes/bullet.tscn")
@@ -10,6 +11,9 @@ var last_direction: Vector2 = Vector2.ZERO
 var gun = preload("res://Scenes/Weapons/gun.tscn")
 var sword = preload("res://Scenes/Weapons/sword.tscn")
 var is_dead = false
+var can_place_block := false  # Boolean to check if the player can place a block
+var block_instance: Node = null  # Instance of the block
+
 # Predefined player colors (Adjust as needed)
 var player_colors = [
 	Color(0.0, 0.5, 1.0),  # Blue for Player 1
@@ -120,3 +124,49 @@ func change_color():
 		
 func apply_speed_boost():
 	move_speed = 500
+
+func add_block_powerup():
+	can_place_block = true  # Player can place blocks now
+
+func _input(event):
+	if event.is_action_pressed("place" + str(player_id)) and can_place_block:
+		place_block()
+		
+func get_facing_direction() -> Vector2:
+	# Assuming your player rotates based on movement, use the player's rotation
+	return Vector2(cos(rotation), sin(rotation))  # Get direction as a unit vector
+
+func get_place_position(direction: Vector2) -> Vector2:
+	# Create a new RayCast2D node
+	var ray = RayCast2D.new()
+	ray.target_position = direction * 100  # Shorter distance (adjust as needed)
+	ray.enabled = true  # Ensure the RayCast2D is active
+
+	# Attach the ray to the player so it starts from the player's position
+	add_child(ray)
+	ray.force_raycast_update()
+
+	# Get the collision point if there's a hit
+	var collision_point = ray.get_collision_point() if ray.is_colliding() else position + direction * 50
+
+	# Cleanup
+	ray.queue_free()
+
+	return collision_point
+
+
+
+
+func place_block():
+	# Get the direction the player is facing
+	var direction = get_facing_direction()  # You can create your own method to get direction
+	
+	# Raycast to find a valid placement position
+	var position = get_place_position(direction)
+	
+	# Instantiate and place the block
+	block_instance = block_scene.instantiate()
+	block_instance.position = position  # Set the position of the block
+	get_tree().current_scene.add_child(block_instance)  # Add it to the scene
+	
+	can_place_block = false  # Disable further placement until a new block is picked up

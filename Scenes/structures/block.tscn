@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhgx1w4ur75sy"]
+
+[ext_resource type="Texture2D" uid="uid://cxanvnd06eilg" path="res://Art/Jake/block.png" id="1_rdubw"]
+[ext_resource type="Script" uid="uid://bjlfbm4nmvyj0" path="res://Scripts/MyHurtbox.gd" id="2_f2e4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2e4k"]
+size = Vector2(16, 16)
+
+[node name="Block" type="CharacterBody2D"]
+scale = Vector2(2.5, 2.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.72204e-07, -5.72204e-07)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_f2e4k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rdubw")
+
+[node name="MyHurtbox" type="Area2D" parent="."]
+script = ExtResource("2_f2e4k")
+metadata/_custom_type_script = "uid://bjlfbm4nmvyj0"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MyHurtbox"]
+position = Vector2(5.72204e-07, -5.72204e-07)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_f2e4k")

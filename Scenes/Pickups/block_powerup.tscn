@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://diojf4r6rsi2o"]
+
+[ext_resource type="Texture2D" uid="uid://c2tb5kqq2h6y8" path="res://Art/Jake/blockpowerup.png" id="1_0cta6"]
+[ext_resource type="Script" uid="uid://bvil15rs0f6sg" path="res://Scripts/block_powerup.gd" id="1_kk1uj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kk1uj"]
+
+[node name="block_powerup" type="Area2D"]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_kk1uj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0cta6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kk1uj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
