@@ -9,7 +9,7 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		print("Player", body.player_id, "picked up speed powerup!")
+		#print("Player", body.player_id, "picked up speed powerup!")
 		body.apply_speed_boost()
 		hide()
 		collision_shape.set_deferred("disabled", true)

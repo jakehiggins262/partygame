@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var starting_direction: Vector2 = Vector2(0, 1)
 @export var player_id := 0
 @export var block_scene: PackedScene
+@export var weapon_scene: PackedScene
+
 
 var current_weapon: Weapon
 var bullet_path = preload("res://Scenes/bullet.tscn")
@@ -63,16 +65,28 @@ func _process(_delta):
 	#if Input.is_action_just_pressed("place" + str(player_id)):
 		#place()
 
+func equip_weapon(new_weapon_scene: PackedScene):
+	weapon_scene = new_weapon_scene  # Store the new weapon scene
+	call_deferred("_equip_weapon_deferred")  # Delay instantiation to avoid physics errors
 
-func equip_weapon(weapon_scene: PackedScene):
-	# Remove current weapon if it exists
-	if current_weapon:
-		current_weapon.queue_free()
+func _equip_weapon_deferred():
+	if weapon_scene == null:
+		return  # Prevent errors if weapon_scene wasn't set
 
-	# Instantiate and attach the new weapon
 	var weapon_instance = weapon_scene.instantiate()
 	$WeaponHolder.add_child(weapon_instance)
 	current_weapon = weapon_instance
+
+
+#func equip_weapon(weapon_scene: PackedScene):
+	## Remove current weapon if it exists
+	#if current_weapon:
+		#current_weapon.queue_free()
+#
+	## Instantiate and attach the new weapon
+	#var weapon_instance = weapon_scene.instantiate()
+	#$WeaponHolder.add_child(weapon_instance)
+	#current_weapon = weapon_instance
 	
 
 #func _on_my_hurtbox_area_entered(area: Area2D) -> void:
@@ -87,7 +101,7 @@ func take_damage(amount: int) -> void:
 		return  # Ignore damage if already dead
 	
 	is_dead = true  # Mark player as dead
-	print("Player", player_id, "took damage and will respawn.")
+	#print("Player", player_id, "took damage and will respawn.")
 	move_speed = 250
 	# Hide the player and disable movement
 	hide()
@@ -106,7 +120,7 @@ func respawn():
 
 	if game_manager and player_id in game_manager.respawn_points:
 		global_position = game_manager.respawn_points[player_id]
-		print("Player", player_id, "respawned at:", global_position)
+		#print("Player", player_id, "respawned at:", global_position)
 	
 	# Reset visibility, movement, and collision
 	show()

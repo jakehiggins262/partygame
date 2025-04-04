@@ -441,7 +441,7 @@ script = ExtResource("15_ae7a6")
 metadata/_custom_type_script = "uid://bjlfbm4nmvyj0"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MyHurtbox"]
-polygon = PackedVector2Array(-14, 12, 13, 114, 9, 1072, 1915, 1074, 1917, 109, 14, 110, 2019, 41, 1947, 1146, -66, 1089)
+polygon = PackedVector2Array(-14, 12, 15, 113, 15, 1073, 1915, 1074, 1917, 113, 15, 113, 2019, 41, 1947, 1146, -66, 1089)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="MyHurtbox"]
 polygon = PackedVector2Array(262, 283, 263, 472, 315, 473, 315, 365, 490, 362, 491, 283)

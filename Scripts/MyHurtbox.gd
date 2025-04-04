@@ -25,7 +25,6 @@ func _on_area_entered(area: Area2D) -> void:
 		# Check if bullet hit a player
 		if get_parent().get_parent().is_in_group("players"):
 			# Bullet hits a player
-			print("Bullet hit a player!")
 			
 			var player = get_parent().get_parent()  # Assuming 'owner' is the hurtbox owner, typically the player
 			
@@ -36,12 +35,10 @@ func _on_area_entered(area: Area2D) -> void:
 				
 			if owner.has_method("take_damage"):
 				# Apply damage if the bullet belongs to another player
-				print("Player takes damage!")
 				owner.take_damage(area.damage)
 		
 		# Bullet hit a boundary (non-player collision)
 		else:
-			print("Bullet hit a boundary!")
 			bullet.queue_free()  # Destroy the bullet
 
 	if owner.has_method("take_damage"):

@@ -32,7 +32,6 @@ func spawn_speed_powerup():
 		var powerup_instance = speed_powerup_scene.instantiate()
 		powerup_instance.position = get_random_position()
 		add_child(powerup_instance)
-		print("Speed powerup spawned at:", powerup_instance.position)
 
 func get_random_position() -> Vector2:
 	var random_x = randf_range(100, map_width - 100)

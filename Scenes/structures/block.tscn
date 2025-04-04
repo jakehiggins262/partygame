@@ -11,7 +11,6 @@ scale = Vector2(2.5, 2.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5.72204e-07, -5.72204e-07)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_f2e4k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -23,5 +22,4 @@ metadata/_custom_type_script = "uid://bjlfbm4nmvyj0"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MyHurtbox"]
 position = Vector2(5.72204e-07, -5.72204e-07)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_f2e4k")

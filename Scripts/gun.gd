@@ -28,7 +28,8 @@ func fire():
 	bullet.player_id = player_id  # Set the player's ID on the bullet
 
 	# Add the bullet to the scene
-	get_tree().current_scene.add_child(bullet)
+	get_tree().current_scene.call_deferred("add_child", bullet)
+
 
 func _on_fire_rate_timer_timeout() -> void:
 	can_fire = true
@@ -37,4 +38,4 @@ func boost_weapon():
 	if fire_rate > .2 and bullet_speed <= 1001:
 		fire_rate /= 2.0
 		bullet_speed *= 2.0
-		print("Boost applied: Fire rate and bullet speed doubled!")
+		#print("Boost applied: Fire rate and bullet speed doubled!")
