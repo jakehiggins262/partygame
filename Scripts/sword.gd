@@ -1,7 +1,9 @@
 extends Weapon
 
-@export var attack_duration: float = 0.2  # Duration for how long the hitbox stays active
-@export var cooldown_duration: float = 0.5  # Cooldown before the player can attack again
+@export var attack_duration: float = 0.5  # Duration for how long the hitbox stays active
+@export var cooldown_duration: float = 0.1  # Cooldown before the player can attack again
+
+@onready var animation = $AnimationPlayer
 
 var can_attack: bool = true
 
@@ -15,6 +17,10 @@ func attack():
 	if can_attack:
 		can_attack = false
 
+		# trigger sword attack animation
+		animation.play("Sword_Attack")
+		
+		
 		# Enable hitbox and collision shape using set_deferred
 		$MyHitbox.set_deferred("monitoring", true)
 		$MyHitbox.get_node("CollisionShape2D").set_deferred("disabled", false)
