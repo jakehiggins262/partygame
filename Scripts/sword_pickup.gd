@@ -16,7 +16,20 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		
 		# Instantiate the new weapon (sword)
 		var new_weapon = sword_scene.instantiate()
-		body.equip_weapon(sword_scene)
+		
+		if body.current_weapon.name.begins_with("Sword"):  # Check if the weapon's name starts with "sword"
+			# Boost the current weapon if it's a sword
+			if body.current_weapon.sword_level == 2.0:
+				#sword is at max level!
+				print("Sword Level at Max!")
+			else:
+				body.current_weapon.boost_weapon()
+				print("Weapon boosted! Attack Size Doubled!")
+		else:
+			# Equip the new weapon if the current weapon is not a sword
+			body.equip_weapon(sword_scene)
+			
+			print("Player equipped a new weapon.")
 		
 		#temp fix for hitbox being enabled when weapon is picked up
 		body.current_weapon.attack()

@@ -394,6 +394,7 @@ position = Vector2(249, 167)
 
 [node name="SwordPickup" parent="." instance=ExtResource("12_6nyvv")]
 position = Vector2(429, 390)
+respawn_time = 0.0
 
 [node name="GameManager" parent="." instance=ExtResource("13_d8c3j")]
 position = Vector2(-4, 2)

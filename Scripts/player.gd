@@ -65,6 +65,9 @@ func _process(_delta):
 	#if Input.is_action_just_pressed("place" + str(player_id)):
 		#place()
 
+func get_current_weapon(): 
+	return Weapon
+
 func equip_weapon(new_weapon_scene: PackedScene):
 	weapon_scene = new_weapon_scene  # Store the new weapon scene
 	call_deferred("_equip_weapon_deferred")  # Delay instantiation to avoid physics errors

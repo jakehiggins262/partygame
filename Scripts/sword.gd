@@ -2,6 +2,7 @@ extends Weapon
 
 @export var attack_duration: float = 0.5  # Duration for how long the hitbox stays active
 @export var cooldown_duration: float = 0.1  # Cooldown before the player can attack again
+@export var sword_level: float = 1.0 # Setting sword level for triggering correct animations
 
 @onready var animation = $AnimationPlayer
 
@@ -17,9 +18,11 @@ func attack():
 	if can_attack:
 		can_attack = false
 
-		# trigger sword attack animation
-		animation.play("Sword_Attack")
-		
+		# trigger correct sword attack animation
+		if sword_level == 1.0:
+			animation.play("Sword_Attack")
+		else:
+			animation.play("Sword_Upgraded")
 		
 		# Enable hitbox and collision shape using set_deferred
 		$MyHitbox.set_deferred("monitoring", true)
@@ -36,3 +39,10 @@ func attack():
 
 		await get_tree().create_timer(cooldown_duration).timeout
 		can_attack = true
+		
+func boost_weapon():
+	if sword_level == 2.0:
+		# Sword level is maxed
+		print("Max sword level!")
+	else:
+		sword_level += 1.0
