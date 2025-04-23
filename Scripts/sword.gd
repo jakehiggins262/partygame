@@ -13,7 +13,6 @@ func _ready():
 	$MyHitbox.set_deferred("monitoring", false)  # Disable hitbox monitoring when sword is ready
 	$MyHitbox.get_node("CollisionShape2D").set_deferred("disabled", true)
 	
-	
 func attack():
 	if can_attack:
 		can_attack = false

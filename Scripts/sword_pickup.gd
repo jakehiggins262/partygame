@@ -39,9 +39,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		collision_shape.set_deferred("disabled", true)
 		$Timer.start(respawn_time)
 
-
-
-
 func _on_timer_timeout() -> void:
 	is_available = true
 	sprite.texture = preload("res://Art/Jake/swordpickupavail.png")

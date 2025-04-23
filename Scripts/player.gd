@@ -77,6 +77,10 @@ func equip_weapon(new_weapon_scene: PackedScene):
 func _equip_weapon_deferred():
 	if weapon_scene == null:
 		return  # Prevent errors if weapon_scene wasn't set
+		
+	if current_weapon:
+		current_weapon.queue_free()
+		current_weapon = null
 
 	var weapon_instance = weapon_scene.instantiate()
 	$WeaponHolder.add_child(weapon_instance)
@@ -119,11 +123,9 @@ func take_damage(amount: int) -> void:
 	# Wait for a respawn delay
 	if get_tree() == null:
 		return  # Scene tree no longer exists
-
+		
 	await get_tree().create_timer(2.0).timeout
 
-	
-	#respawn()
 	
 func respawn():
 	var game_manager = get_tree().current_scene.find_child("GameManager", true, false)

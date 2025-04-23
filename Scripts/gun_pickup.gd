@@ -33,8 +33,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$Timer.start(respawn_time)
 
 
-
-
 func _on_timer_timeout() -> void:
 	is_available = true
 	sprite.texture = preload("res://Art/Jake/gunpickupavail.png")

@@ -59,7 +59,6 @@ func get_random_position() -> Vector2:
 	return Vector2(random_x, random_y)
 
 func _on_player_died(player_name):
-	print("we in the function")
 	#for p in players:
 		#if p.player_id == player_name:
 			#p.queue_free() # Or set an is_alive flag to false
