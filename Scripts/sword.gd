@@ -27,7 +27,7 @@ func attack():
 		$MyHitbox.set_deferred("monitoring", true)
 		$MyHitbox.get_node("CollisionShape2D").set_deferred("disabled", false)
 
-		print("Sword attack!")
+		#print("Sword attack!")
 
 		# Start timers for hitbox and cooldown
 		await get_tree().create_timer(attack_duration).timeout
