@@ -6,7 +6,6 @@ extends CharacterBody2D
 @export var block_scene: PackedScene
 @export var weapon_scene: PackedScene
 
-
 var current_weapon: Weapon
 var bullet_path = preload("res://Scenes/bullet.tscn")
 var last_direction: Vector2 = Vector2.ZERO
@@ -15,6 +14,8 @@ var sword = preload("res://Scenes/Weapons/sword.tscn")
 var is_dead = false
 var can_place_block := false  # Boolean to check if the player can place a block
 var block_instance: Node = null  # Instance of the block
+
+signal player_died(player_id)
 
 # Predefined player colors (Adjust as needed)
 var player_colors = [
@@ -31,6 +32,7 @@ var player_colors = [
 func _ready():
 	equip_weapon(sword)
 	change_color()
+	add_to_group("Players")
 
 #animation player init
 #@onready var animation_player := $AnimationPlayer
@@ -104,7 +106,8 @@ func take_damage(amount: int) -> void:
 		return  # Ignore damage if already dead
 	
 	is_dead = true  # Mark player as dead
-	#print("Player", player_id, "took damage and will respawn.")
+	emit_signal("player_died", player_id)
+	print("Player", player_id, "took damage and will respawn.")
 	move_speed = 250
 	# Hide the player and disable movement
 	hide()
@@ -114,9 +117,13 @@ func take_damage(amount: int) -> void:
 	$CollisionShape2D.set_deferred("disabled", true)
 	
 	# Wait for a respawn delay
+	if get_tree() == null:
+		return  # Scene tree no longer exists
+
 	await get_tree().create_timer(2.0).timeout
+
 	
-	respawn()
+	#respawn()
 	
 func respawn():
 	var game_manager = get_tree().current_scene.find_child("GameManager", true, false)
