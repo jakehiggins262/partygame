@@ -76,7 +76,8 @@ func respawn():
 
 	if game_manager and player_id in game_manager.respawn_points:
 		global_position = game_manager.respawn_points[player_id]
-
+		
+	move_speed = 250
 	show()
 	equip_weapon(sword)
 	set_physics_process(true)
