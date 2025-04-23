@@ -87,7 +87,13 @@ func _reset_round():
 	for player in players:
 		player.respawn()
 		
-	#need to reset powerups and structures too
+	# Remove all powerups
+	for powerup in get_tree().get_nodes_in_group("tempPowerup"):
+		powerup.queue_free()
+
+	# Remove all structures
+	for structure in get_tree().get_nodes_in_group("Structures"):
+		structure.queue_free()
 
 func _end_game(winner_name):
 	print("%s wins the game!" % winner_name)

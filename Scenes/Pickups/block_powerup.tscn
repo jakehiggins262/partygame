@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kk1uj"]
 
-[node name="block_powerup" type="Area2D"]
+[node name="block_powerup" type="Area2D" groups=["tempPowerup"]]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_kk1uj")
 

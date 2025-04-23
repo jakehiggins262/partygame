@@ -28,6 +28,8 @@ window/stretch/scale=2.0
 
 players=""
 Bullet=""
+Structures=""
+tempPowerup=""
 
 [input]
 
