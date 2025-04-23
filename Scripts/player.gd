@@ -62,7 +62,7 @@ func take_damage(amount: int) -> void:
 
 	is_dead = true
 	emit_signal("player_died", player_id)
-	print("Player", player_id, "took damage and will respawn.")
+	print("Player ", player_id, " got killt.")
 	move_speed = 250
 	hide()
 	set_physics_process(false)
